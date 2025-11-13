@@ -11,36 +11,31 @@ export default function StepsTracking({ step }) {
       <img
         src="assets/images/bg-sidebar-desktop.svg"
         alt="Sidebar"
-        className="border w-[25rem] h-auto hidden md:block lg:block"
+        className="desktop-sidebar"
       />
       <img
         src="assets/images/bg-sidebar-mobile.svg"
         alt="Sidebar"
-        className="border w-full h-auto md:hidden lg:hidden"
+        className="mobile-sidebar"
       />
 
-      <div className="absolute inset-0 flex justify-center items-start mt-6 gap-x-4  md:gap-x-0 md:flex-col md:justify-start p-8 md:mt-0">
+      <div className="step-tracking-container">
         {steps.map(({ number, title, subtitle }) => (
-          <div
-            key={number}
-            className="flex justify-start items-center gap-4 step-numbered my-4"
-          >
+          <div key={number} className="step-indicator">
             <span
-              className={`flex justify-center items-center h-8 w-8 text-sm font-semibold rounded-full transition-all duration-300
+              className={`step-indicator-number
                 ${
                   step === number
-                    ? "bg-primaryBlue200 text-primaryBlue"
-                    : "border border-neutralWhite text-neutralWhite"
+                    ? "step-circle-active"
+                    : "step-circle-inactive"
                 }
               `}
             >
               {number}
             </span>
-            <div className="step-info hidden md:block">
-              <p className="step-title text-xs text-neutralGray">{subtitle}</p>
-              <p className="step-subtitle text-neutralWhite text-sm tracking-widest font-bold">
-                {title}
-              </p>
+            <div className="step-info">
+              <p className="step-title">{subtitle}</p>
+              <p className="step-subtitle ">{title}</p>
             </div>
           </div>
         ))}

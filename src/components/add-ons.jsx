@@ -26,23 +26,17 @@ export default function AddOns({ billingType, register }) {
   ];
 
   return (
-    <div className="personal-info flex flex-col justify-beween h-auto px-6 py-10 bg-neutralWhite shadow-md md:bg-transparent rounded-lg md:shadow-none md:rounded-none md:p-0 md:h-full">
+    <div className="add-ons-component">
       {/* Heading */}
       <div className="component-heading mb-4">
-        <h2 className="text-lg font-bold text-primaryBlue">Pick add-ons</h2>
-        <p className="text-sm text-neutralGray">
-          Add-ons help enhance your gaming experience.
-        </p>
+        <h2>Pick add-ons</h2>
+        <p>Add-ons help enhance your gaming experience.</p>
       </div>
 
       {/* Add-on Options */}
       <div className="flex flex-col space-y-3">
         {addOns.map((item) => (
-          <label
-            key={item.id}
-            htmlFor={item.id}
-            className="relative flex items-center space-x-4 p-4 border border-neutralGray/30 rounded-lg cursor-pointer transition-all duration-300 hover:bg-primaryPurple/5 hover:border-primaryPurple peer-checked:border-primaryPurple peer-checked:bg-primaryPurple/5"
-          >
+          <label key={item.id} htmlFor={item.id} className="add-ons-label">
             {/* Hidden checkbox */}
             <input
               type="checkbox"
@@ -53,7 +47,7 @@ export default function AddOns({ billingType, register }) {
             />
 
             {/* Custom checkbox style */}
-            <span className="flex items-center justify-center w-5 h-5 border-2 border-neutralGray/40 rounded-md transition-all duration-300 peer-checked:border-primaryPurple peer-checked:bg-primaryPurple">
+            <span className="add-ons-custom-checkbox">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -69,16 +63,12 @@ export default function AddOns({ billingType, register }) {
             </span>
 
             {/* Add-on Text & Price */}
-            <div className="flex justify-between items-center flex-1">
+            <div className="add-ons-title-price">
               <div className="flex flex-col">
-                <span className="text-base text-primaryBlue font-semibold transition-all duration-300 peer-checked:text-primaryPurple">
-                  {item.title}
-                </span>
-                <span className="text-sm text-neutralGray font-medium transition-all duration-300 peer-checked:text-primaryPurple">
-                  {item.description}
-                </span>
+                <span className="add-ons-title">{item.title}</span>
+                <span className="add-ons-desc">{item.description}</span>
               </div>
-              <span className="text-primaryPurple text-sm font-semibold tracking-wide">
+              <span className="add-ons-price">
                 +${monthly ? item.monthlyPrice : item.yearlyPrice}/
                 {monthly ? "mo" : "yr"}
               </span>

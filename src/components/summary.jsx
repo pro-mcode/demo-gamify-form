@@ -48,34 +48,30 @@ export default function Summary({ formData, billingType, prevStep }) {
   const totalPrice = planPrice + addonsTotal;
 
   return (
-    <div className="personal-info flex flex-col h-auto px-6 py-10 bg-neutralWhite shadow-md md:bg-transparent rounded-lg md:shadow-none md:rounded-none md:p-0 md:h-full">
+    <div className="summary-component">
       {/* Heading */}
       <div className="component-heading mb-4">
-        <h2 className="text-lg font-bold text-primaryBlue">Finishing up</h2>
-        <p className="text-sm text-neutralGray">
-          Double-check everything looks OK before confirming
-        </p>
+        <h2>Finishing up</h2>
+        <p>Double-check everything looks OK before confirming</p>
       </div>
 
       {/* Summary Box */}
-      <div className="bg-primaryPurple/5 p-6 rounded-md">
+      <div className="summary-box">
         {/* Selected Plan */}
-        <div className="flex justify-between items-center border-b border-neutralGray/30 pb-2 mb-2">
+        <div className="summary-plan">
           <div className="flex flex-col">
-            <span className="font-semibold text-primaryBlue">
+            <span className="summary-title">
               {selectedPlan?.name || "No Plan Selected"}{" "}
-              <span className="text-sm text-neutralGray ml-2">
-                ({billingType})
-              </span>
+              <span className="summary-name">({billingType})</span>
             </span>
             <span
-              className="text-sm text-neutralGray underline underline-primaryBlue cursor-pointer"
+              className="summary-update-plan"
               onClick={() => prevStep(2)} // Go back to Plans step
             >
               Change
             </span>
           </div>
-          <span className="font-semibold text-primaryBlue">
+          <span className="summary-price">
             ${planPrice}/{billingType === "monthly" ? "mo" : "yr"}
           </span>
         </div>
@@ -84,9 +80,9 @@ export default function Summary({ formData, billingType, prevStep }) {
         {selectedAddOns?.length > 0 ? (
           <div className="space-y-2 mb-2">
             {selectedAddOns.map((addon) => (
-              <div key={addon.id} className="flex justify-between items-center">
-                <span className="text-sm text-neutralGray">{addon.title}</span>
-                <span className="text-sm font-semibold text-primaryBlue/60 tracking-wider">
+              <div key={addon.id} className="summary-id">
+                <span className="summary-list">{addon.title}</span>
+                <span className="summary-list-price">
                   +$
                   {billingType === "monthly"
                     ? addon.monthlyPrice
@@ -97,16 +93,16 @@ export default function Summary({ formData, billingType, prevStep }) {
             ))}
           </div>
         ) : (
-          <p className="text-sm text-neutralGray mb-2">No add-ons selected</p>
+          <p className="summary-empty-list">No add-ons selected</p>
         )}
       </div>
 
       {/* Total */}
-      <div className="flex justify-between items-center border-t border-neutralGray/30 pt-2 mt-4">
-        <span className="text-sm font-normal text-neutralGray">
+      <div className="summary-total-wrapper">
+        <span className="summary-total">
           Total (per {billingType === "monthly" ? "month" : "year"})
         </span>
-        <span className="font-bold text-primaryPurple tracking-wider">
+        <span className="summary-total-price">
           ${totalPrice}/{billingType === "monthly" ? "mo" : "yr"}
         </span>
       </div>
