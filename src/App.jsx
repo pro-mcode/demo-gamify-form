@@ -52,7 +52,7 @@ function App() {
   }, [isSubmitted, reset]);
 
   return (
-    <div className="flex flex-col rounded-2xl md:bg-neutralWhite md:p-5 md:flex-row  md:pr-0 md:w-auto lg:w-[950px] md:mx-8">
+    <div className="flex flex-col rounded-2xl h-screen md:bg-neutralWhite md:h-fit md:p-5 md:flex-row  md:pr-0 md:w-auto lg:w-[950px] md:mx-8">
       {/* Step tracker */}
       <StepsTracking step={step} />
 

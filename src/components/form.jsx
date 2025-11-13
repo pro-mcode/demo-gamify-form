@@ -17,7 +17,7 @@ export default function BillingForm({
   isValid,
 }) {
   return (
-    <div className="w-full h-screen md:h-auto">
+    <div className="w-full h-full md:h-auto">
       {!isSubmitted ? (
         <form
           onSubmit={handleSubmit}

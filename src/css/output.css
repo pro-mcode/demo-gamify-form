@@ -673,6 +673,10 @@ video {
   height: 100vh;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -1170,8 +1174,23 @@ video {
     height: auto;
   }
 
+  .md\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .md\:max-h-fit {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
+
   .md\:min-h-\[100vh\] {
     min-height: 100vh;
+  }
+
+  .md\:min-h-fit {
+    min-height: -moz-fit-content;
+    min-height: fit-content;
   }
 
   .md\:w-\[100\%\] {
