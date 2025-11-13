@@ -90,7 +90,7 @@ export default function BillingForm({
           </div>
         </form>
       ) : (
-        <div className="absolute top-36 flex flex-col justify-center items-center px-8 py-16 w-[90%] h-fit bg-neutralWhite shadow-md  rounded-lg  mx-auto  space-y-4 opacity-0 animate-fadeIn  md:relative md:top-0 md:bg-transparent md:shadow-none md:rounded-none md:h-full md:p-4 md:w-[100%] lg:w-[80%]">
+        <div className="absolute top-36 flex flex-col justify-center items-center px-6 py-16 w-[90%] h-fit bg-neutralWhite shadow-md  rounded-lg  mx-auto  space-y-4 opacity-0 animate-fadeIn  md:relative md:top-0 md:bg-transparent md:shadow-none md:rounded-none md:h-full md:p-4 md:w-[100%] lg:w-[80%]">
           <img
             src="assets/images/icon-thank-you.svg"
             alt=""

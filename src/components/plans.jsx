@@ -13,7 +13,7 @@ export default function Plans({
   ];
 
   return (
-    <div className="personal-info flex flex-col justify-between h-auto px-8 py-10 bg-neutralWhite shadow-md md:bg-transparent rounded-lg md:shadow-none md:rounded-none md:p-0 md:h-full">
+    <div className="personal-info flex flex-col justify-between h-auto px-6 py-10 bg-neutralWhite shadow-md md:bg-transparent rounded-lg md:shadow-none md:rounded-none md:p-0 md:h-full">
       {/* Contents */}
       <div className="space-y-6">
         {/* Heading */}
