@@ -19,7 +19,7 @@ export default function StepsTracking({ step }) {
         className="border w-full h-auto md:hidden lg:hidden"
       />
 
-      <div className="absolute inset-0 flex justify-center gap-x-4 md:gap-x-0 md:flex-col md:justify-start p-8">
+      <div className="absolute inset-0 flex justify-center items-start mt-6 gap-x-4  md:gap-x-0 md:flex-col md:justify-start p-8 md:mt-0">
         {steps.map(({ number, title, subtitle }) => (
           <div
             key={number}

@@ -13,7 +13,7 @@ export default function Plans({
   ];
 
   return (
-    <div className="personal-info flex flex-col justify-between h-full">
+    <div className="personal-info flex flex-col justify-between h-auto px-8 py-10 bg-neutralWhite shadow-md md:bg-transparent rounded-lg md:shadow-none md:rounded-none md:p-0 md:h-full">
       {/* Contents */}
       <div className="space-y-6">
         {/* Heading */}
@@ -25,9 +25,9 @@ export default function Plans({
         </div>
 
         {/* Plan Cards */}
-        <div className="flex gap-3 md:gap-4">
+        <div className="flex flex-col gap-3 md:flex-row md:gap-4">
           {plans.map((plan) => (
-            <div key={plan.name} className="relative w-1/3">
+            <div key={plan.name} className="relative w-full md:w-1/3">
               <input
                 type="radio"
                 id={plan.name}
@@ -37,25 +37,27 @@ export default function Plans({
               />
               <label
                 htmlFor={plan.name}
-                className="flex flex-col justify-start items-start space-y-2 cursor-pointer select-none border-[1.5px] border-neutralGray/50 rounded-md h-fit transition-all duration-300 hover:bg-primaryPurple/5 hover:border-primaryPurple peer-checked:border-primaryPurple peer-checked:bg-primaryPurple/10 p-4"
+                className="flex md:flex-col space-x-4 justify-start items-start md:space-x-0 md:space-y-2 cursor-pointer select-none border-[1.5px] border-neutralGray/50 rounded-md h-fit transition-all duration-300 hover:bg-primaryPurple/5 hover:border-primaryPurple peer-checked:border-primaryPurple peer-checked:bg-primaryPurple/10 p-4"
               >
                 <img
                   src={`assets/images/icon-${plan.name.toLowerCase()}.svg`}
                   alt={plan.name}
                   className="w-10 h-10 mb-4"
                 />
-                <span className="text-base text-primaryBlue font-semibold transition-all duration-300 peer-checked:text-primaryPurple">
-                  {plan.name}
-                </span>
-                <span className="text-sm text-neutralGray font-medium">
-                  ${isMonthly ? plan.monthly : plan.yearly}/
-                  {isMonthly ? "mo" : "yr"}
-                </span>
-                {!isMonthly && (
-                  <span className="text-xs text-primaryBlue font-medium">
-                    2 months free
+                <div className="flex flex-col">
+                  <span className="text-base text-primaryBlue font-semibold transition-all duration-300 peer-checked:text-primaryPurple">
+                    {plan.name}
                   </span>
-                )}
+                  <span className="text-sm text-neutralGray font-medium">
+                    ${isMonthly ? plan.monthly : plan.yearly}/
+                    {isMonthly ? "mo" : "yr"}
+                  </span>
+                  {!isMonthly && (
+                    <span className="text-xs text-primaryBlue font-medium">
+                      2 months free
+                    </span>
+                  )}
+                </div>
               </label>
             </div>
           ))}

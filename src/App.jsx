@@ -33,8 +33,8 @@ function App() {
     },
   });
   const onSubmit = (data) => {
-    console.log("Final Submission:", data);
-    alert("Form submitted! Check console for details.");
+    // console.log("Final Submission:", data);
+    // alert("Form submitted! Check console for details.");
     setFormData(data);
     setIsSubmitted(true);
   };
@@ -45,7 +45,7 @@ function App() {
         setStep(1);
         setIsSubmitted(false);
         reset();
-      }, 5000);
+      }, 50000000);
 
       return () => clearTimeout(timer);
     }

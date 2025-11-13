@@ -17,11 +17,11 @@ export default function BillingForm({
   isValid,
 }) {
   return (
-    <div className="w-full h-full md:h-auto">
+    <div className="w-full h-full md:h-auto flex flex-col justify-center items-center">
       {!isSubmitted ? (
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col w-full lg:w-[80%] md:w-[100%] mx-auto h-full p-4 bg-neutralWhite shadow-md md:bg-transparent md:shadow-none md:rounded-none"
+          className="absolute top-32 flex flex-col justify-between w-full mx-auto h-full py-4 px-5 lg:w-[80%] md:w-[100%] md:relative md:top-0 md:p-4"
         >
           {step === 1 && (
             <PersonalInfo
@@ -56,12 +56,12 @@ export default function BillingForm({
             />
           )}
           {/* Navigation buttons */}
-          <div className="flex justify-between items-center mt-8">
+          <div className="flex justify-between items-center mt-8 bg-neutralWhite py-4 px-8 -mx-8 -mb-4 md:bg-transparent md:p-0 md:m-0 md:mt-8">
             {step > 1 && (
               <button
                 type="button"
                 onClick={() => prevStep()}
-                className="text-neutralGray hover:text-primaryBlue font-semibold transition-all"
+                className="text-neutralGray text-sm hover:text-primaryBlue font-semibold transition-all md:text-base"
               >
                 Go Back
               </button>
@@ -73,7 +73,7 @@ export default function BillingForm({
                 type="button"
                 onClick={step < 3 ? nextStep : () => nextStep()}
                 disabled={!isValid}
-                className="bg-primaryBlue text-white px-8 py-4 rounded-lg font-semibold hover:bg-primaryPurple transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                className="bg-primaryBlue text-sm text-white px-5 py-3 rounded-md font-semibold hover:bg-primaryPurple transition-all disabled:opacity-30 disabled:cursor-not-allowed md:px-8 md:py-4 md:rounded-lg md:text-base"
               >
                 {step === 3 ? "Review" : "Next Step"}
               </button>
@@ -82,7 +82,7 @@ export default function BillingForm({
                 type="button"
                 onClick={handleSubmit}
                 disabled={!isValid}
-                className="bg-primaryBlue text-white px-8 py-4 rounded-lg font-semibold hover:bg-primaryPurple transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                className="bg-primaryBlue text-sm text-white px-5 py-3 rounded-md font-semibold hover:bg-primaryPurple transition-all disabled:opacity-30 disabled:cursor-not-allowed md:px-8 md:py-4 md:rounded-lg md:text-base"
               >
                 Confirm
               </button>
@@ -90,7 +90,7 @@ export default function BillingForm({
           </div>
         </form>
       ) : (
-        <div className="flex flex-col justify-center items-center lg:w-[80%] md:w-[100%] mx-auto h-full p-4 space-y-4 opacity-0 animate-fadeIn">
+        <div className="absolute top-36 flex flex-col justify-center items-center px-8 py-16 w-[90%] h-fit bg-neutralWhite shadow-md  rounded-lg  mx-auto  space-y-4 opacity-0 animate-fadeIn  md:relative md:top-0 md:bg-transparent md:shadow-none md:rounded-none md:h-full md:p-4 md:w-[100%] lg:w-[80%]">
           <img
             src="assets/images/icon-thank-you.svg"
             alt=""

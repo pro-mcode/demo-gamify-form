@@ -1,6 +1,6 @@
 export default function PersonalInfo({ register, errors }) {
   return (
-    <div className="personal-info flex flex-col h-full">
+    <div className="personal-info flex flex-col h-auto px-6 py-10 bg-neutralWhite shadow-md md:bg-transparent rounded-lg md:shadow-none md:rounded-none md:p-0 md:h-full">
       <div className="component-heading">
         <h2>Personal info</h2>
         <p>Please provide your name, email address, and phone number.</p>

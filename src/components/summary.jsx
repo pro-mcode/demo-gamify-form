@@ -48,7 +48,7 @@ export default function Summary({ formData, billingType, prevStep }) {
   const totalPrice = planPrice + addonsTotal;
 
   return (
-    <div className="personal-info flex flex-col h-full">
+    <div className="personal-info flex flex-col h-auto px-8 py-10 bg-neutralWhite shadow-md md:bg-transparent rounded-lg md:shadow-none md:rounded-none md:p-0 md:h-full">
       {/* Heading */}
       <div className="component-heading mb-4">
         <h2 className="text-lg font-bold text-primaryBlue">Finishing up</h2>
