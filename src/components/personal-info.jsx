@@ -6,7 +6,7 @@ export default function PersonalInfo({ register, errors }) {
         <p>Please provide your name, email address, and phone number.</p>
       </div>
       <div className="space-y-4">
-        <div className="">
+        <div>
           <label className="personal-info-label" htmlFor="name">
             Name
           </label>
@@ -21,8 +21,8 @@ export default function PersonalInfo({ register, errors }) {
             <p className="error-message">{errors.name.message}</p>
           )}
         </div>
-        <div className="">
-          <label className="personal-info-label" htmlFor="name">
+        <div>
+          <label className="personal-info-label" htmlFor="email">
             Email
           </label>
           <input
@@ -30,14 +30,20 @@ export default function PersonalInfo({ register, errors }) {
             id="email"
             type="email"
             placeholder="e.g adedamolamaxwell@gamify.com"
-            {...register("email", { required: "Email is required" })}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                message: "Enter a valid email address",
+              },
+            })}
           />
           {errors.email && (
             <p className="error-message">{errors.email.message}</p>
           )}
         </div>
-        <div className="">
-          <label className="personal-info-label" htmlFor="name">
+        <div>
+          <label className="personal-info-label" htmlFor="number">
             Phone Number
           </label>
           <input
@@ -45,7 +51,13 @@ export default function PersonalInfo({ register, errors }) {
             id="number"
             type="tel"
             placeholder="e.g +1 234 567 890"
-            {...register("number", { required: "Phone number is required" })}
+            {...register("number", {
+              required: "Phone number is required",
+              pattern: {
+                value: /^\+?[0-9\s-]{7,15}$/,
+                message: "Enter a valid phone number",
+              },
+            })}
           />
           {errors.number && (
             <p className="error-message">{errors.number.message}</p>

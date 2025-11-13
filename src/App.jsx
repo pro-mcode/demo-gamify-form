@@ -61,9 +61,9 @@ function App() {
         register={register}
         handleSubmit={handleSubmit(onSubmit)}
         errors={errors}
-        step={step} // 👈 step controlled by App
-        nextStep={nextStep} // 👈 passed down
-        prevStep={prevStep} // 👈 passed down
+        step={step} // step controlled by App
+        nextStep={nextStep}
+        prevStep={prevStep}
         billingType={billingType}
         setBillingType={setBillingType}
         formData={formData}
