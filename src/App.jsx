@@ -45,7 +45,7 @@ function App() {
         setStep(1);
         setIsSubmitted(false);
         reset();
-      }, 50000000);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }

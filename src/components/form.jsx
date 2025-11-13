@@ -102,7 +102,7 @@ export default function BillingForm({
             our platform. If you ever need support, please feel free to email us
             at{" "}
             <a
-              href="mailto:support@gamify.com"
+              href="mailto:promcode01@gmail.com"
               className="text-primaryPurple underline"
             >
               support@gamify.com
