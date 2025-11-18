@@ -12,7 +12,7 @@
   @apply text-error text-sm mt-2;
 }
 .app-component {
-  @apply flex flex-col rounded-2xl h-screen md:bg-neutralWhite md:h-fit md:p-5 md:flex-row  md:pr-0 md:w-auto lg:w-[950px] md:mx-8;
+  @apply flex flex-col rounded-2xl h-screen md:bg-neutralWhite md:h-fit md:p-5 md:flex-row  md:pr-0 md:w-auto lg:w-[950px] md:mx-8 md:my-4;
 }
 .form-component {
   @apply w-full h-full md:h-auto flex flex-col justify-center items-center;
